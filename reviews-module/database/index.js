@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 //create reviews in mongodb
-mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true });
+mongoose.connect(
+  "mongodb://localhost/reviews",
+  { useNewUrlParser: true }
+);
 const db = mongoose.connection;
 
 const reviewsSchema = new mongoose.Schema({
@@ -20,7 +23,7 @@ const reviewsSchema = new mongoose.Schema({
   value: Number
 });
 
-const Reviews = db .model("Reviews", reviewsSchema);
+const Reviews = db.model("Reviews", reviewsSchema);
 
 //this will insert all the reviews from MOCK_DATA.json
 let insertAllDummyData = dummyDataArray => {
@@ -47,4 +50,12 @@ let insertAllDummyData = dummyDataArray => {
   });
 };
 
+let getListingIdReviews = listingId => {
+  return Reviews.find({ listingid: listingId })
+    .sort("-date")
+    .exec();
+};
+
 module.exports.insertAllDummyData = insertAllDummyData;
+module.exports.getListingIdReviews = getListingIdReviews;
+module.exports.db = db;
