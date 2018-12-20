@@ -59,3 +59,4 @@ let getListingIdReviews = listingId => {
 module.exports.insertAllDummyData = insertAllDummyData;
 module.exports.getListingIdReviews = getListingIdReviews;
 module.exports.db = db;
+module.exports.Reviews = Reviews;
