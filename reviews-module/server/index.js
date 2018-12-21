@@ -9,7 +9,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(express.static(__dirname + '/../client/dist'));
 
 //get all the reviews for a specific listing id
 app.use('/', reviewsRoutes);
