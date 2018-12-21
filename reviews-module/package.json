@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack",
+    "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/index.js"
   },
   "author": "",
@@ -14,6 +15,9 @@
     "node": ">=6.13.0"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -29,9 +33,18 @@
     "nodemon": "^1.18.9",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "webpack": "^4.27.1"
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^7.1.5",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2"
   }
 }
