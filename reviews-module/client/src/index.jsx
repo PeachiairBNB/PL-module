@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import Search from './components/Search.jsx';
 import Reviews from './components/Reviews.jsx';
 import Ratings from './components/Ratings.jsx';
+import axios from 'axios';
 
 class ReviewsModule extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            reviews: []
         }
     }
+    componentDidMount() {
+        // render reviews for current listing
+    }
+
 
     render() {
         return(
@@ -19,8 +24,8 @@ class ReviewsModule extends React.Component {
                 <section>
                     <Search />
                     <div>
-                        {/* <Ratings />
-                        <Reviews /> */}
+                        {/* <Ratings /> */}
+                        {/* <Reviews /> */}
                     </div>
                 </section>
             </div>
