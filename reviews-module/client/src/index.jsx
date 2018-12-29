@@ -22,10 +22,11 @@ class ReviewsModule extends React.Component {
             <div id='reviews'>
             <div>
                 <section>
-                    <Search />
+                    {/* <Search /> */}
                     <div>
                         {/* <Ratings /> */}
-                        {/* <Reviews /> */}
+                        <Reviews />
+                        {/* Pages */}
                     </div>
                 </section>
             </div>
