@@ -2,6 +2,24 @@ import React from "react";
 
 const Ratings = props => (
   <div className="_2h22gn">
+    {props.handleBackToReviews ? (
+      <div className="back-to-reviews">
+        <div className="search-count">
+          {props.reviews.length} guests have mentioned{" "}
+          <b>"{props.searchValue}"</b>
+        </div>
+        <div>
+          <button
+            className="back-to-reviews-button"
+            type="button"
+            onClick={props.handleBackToReviews}
+          >
+            Back to all reviews
+          </button>
+        </div>
+      </div>
+    ) : (
+      <div>
         <div className="_en5l15m">
           <div>
             <div style={{ marginBottom: 12 }}>
@@ -11,7 +29,7 @@ const Ratings = props => (
                 </div>
                 <div className="_iq8x9is">
                   <div className="_1iu38l3">
-                  {props.handleStarRating(props.avgAccuracy)}
+                    {props.handleStarRating(props.avgAccuracy)}
                   </div>
                 </div>
               </div>
@@ -23,7 +41,7 @@ const Ratings = props => (
                 </div>
                 <div className="_iq8x9is">
                   <div className="_1iu38l3">
-                  {props.handleStarRating(props.avgCommunication)}
+                    {props.handleStarRating(props.avgCommunication)}
                   </div>
                 </div>
               </div>
@@ -35,7 +53,7 @@ const Ratings = props => (
                 </div>
                 <div className="_iq8x9is">
                   <div className="_1iu38l3">
-                   {props.handleStarRating(props.avgCleanliness)}
+                    {props.handleStarRating(props.avgCleanliness)}
                   </div>
                 </div>
               </div>
@@ -63,7 +81,7 @@ const Ratings = props => (
                 </div>
                 <div className="_iq8x9is">
                   <div className="_1iu38l3">
-                   {props.handleStarRating(props.avgCheckIn)}
+                    {props.handleStarRating(props.avgCheckIn)}
                   </div>
                 </div>
               </div>
@@ -83,7 +101,8 @@ const Ratings = props => (
           </div>
         </div>
       </div>
+    )}
+  </div>
 );
-
 
 export default Ratings;

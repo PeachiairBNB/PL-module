@@ -17,9 +17,12 @@ class ReviewsModule extends React.Component {
       avgLocation: 0,
       avgCheckIn: 0,
       avgValue: 0,
-      overallRating: 0
+      overallRating: 0,
+      showBackToReviewsButton: false,
+      searchValue: ''
     };
     this.handleStarRating = this.handleStarRating.bind(this);
+    this.handleBackToReviews = this.handleBackToReviews.bind(this);
   }
   componentDidMount() {
     // render reviews for current listing
@@ -1061,6 +1064,12 @@ class ReviewsModule extends React.Component {
     }
   }
 
+  handleBackToReviews() {
+    this.setState({
+      showBackToReviewsButton: false
+    })
+  }
+
   render() {
     return (
       <div id="reviews">
@@ -1071,6 +1080,7 @@ class ReviewsModule extends React.Component {
               <Ratings
                 {...this.state}
                 handleStarRating={this.handleStarRating}
+                handleBackToReviews={this.handleBackToReviews}
               />
               <ReviewList reviews={this.state.reviews} />
               {/* Pages */}
