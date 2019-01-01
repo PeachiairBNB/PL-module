@@ -11,13 +11,13 @@ class ReviewsModule extends React.Component {
     this.state = {
       reviews: [],
       listingId: 1,
-      avgAccuracy: null,
-      avgCommunication: null,
-      avgCleanliness: null,
-      avgLocation: null,
-      avgCheckIn: null,
-      avgValue: null,
-      overallRating: null
+      avgAccuracy: 0,
+      avgCommunication: 0,
+      avgCleanliness: 0,
+      avgLocation: 0,
+      avgCheckIn: 0,
+      avgValue: 0,
+      overallRating: 0
     };
     this.handleStarRating = this.handleStarRating.bind(this);
   }
@@ -50,29 +50,29 @@ class ReviewsModule extends React.Component {
       .then(res => {
         this.setState({
           avgAccuracy:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.accuracy;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           avgCommunication:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.communication;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           avgCleanliness:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.cleanliness;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           avgLocation:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.location;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           avgCheckIn:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.checkin;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           avgValue:
-            res.reduce((sum, review) => {
+            res.data.reduce((sum, review) => {
               return sum + review.value;
-            }, 0) / res.length,
+            }, 0) / res.data.length,
           overallRating:
             (this.state.avgAccuracy +
               this.state.avgCommunication +
@@ -981,9 +981,9 @@ class ReviewsModule extends React.Component {
       <div id="reviews">
         <div>
           <section>
-            {/* <Search /> */}
+            {/* <Search handleStarRating={this.handleStarRating}/> */}
             <div>
-              {/* <Ratings /> */}
+              <Ratings {...this.state} handleStarRating={this.handleStarRating}/>
               <ReviewList reviews={this.state.reviews} />
               {/* Pages */}
             </div>
