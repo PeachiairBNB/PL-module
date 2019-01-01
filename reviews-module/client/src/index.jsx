@@ -19,7 +19,7 @@ class ReviewsModule extends React.Component {
       avgValue: 0,
       overallRating: 0,
       showBackToReviewsButton: false,
-      searchValue: ''
+      searchValue: ""
     };
     this.handleStarRating = this.handleStarRating.bind(this);
     this.handleBackToReviews = this.handleBackToReviews.bind(this);
@@ -51,40 +51,46 @@ class ReviewsModule extends React.Component {
     axios
       .get(`/api/items/${listingId}`)
       .then(res => {
-        this.setState({
-          avgAccuracy:
-            res.data.reduce((sum, review) => {
-              return sum + review.accuracy;
-            }, 0) / res.data.length,
-          avgCommunication:
-            res.data.reduce((sum, review) => {
-              return sum + review.communication;
-            }, 0) / res.data.length,
-          avgCleanliness:
-            res.data.reduce((sum, review) => {
-              return sum + review.cleanliness;
-            }, 0) / res.data.length,
-          avgLocation:
-            res.data.reduce((sum, review) => {
-              return sum + review.location;
-            }, 0) / res.data.length,
-          avgCheckIn:
-            res.data.reduce((sum, review) => {
-              return sum + review.checkin;
-            }, 0) / res.data.length,
-          avgValue:
-            res.data.reduce((sum, review) => {
-              return sum + review.value;
-            }, 0) / res.data.length,
-          overallRating:
-            (this.state.avgAccuracy +
-              this.state.avgCommunication +
-              this.state.avgCleanliness +
-              this.state.avgLocation +
-              this.state.avgCheckIn +
-              this.state.avgValue) /
-            6
-        });
+        this.setState(
+          {
+            avgAccuracy:
+              res.data.reduce((sum, review) => {
+                return sum + review.accuracy;
+              }, 0) / res.data.length,
+            avgCommunication:
+              res.data.reduce((sum, review) => {
+                return sum + review.communication;
+              }, 0) / res.data.length,
+            avgCleanliness:
+              res.data.reduce((sum, review) => {
+                return sum + review.cleanliness;
+              }, 0) / res.data.length,
+            avgLocation:
+              res.data.reduce((sum, review) => {
+                return sum + review.location;
+              }, 0) / res.data.length,
+            avgCheckIn:
+              res.data.reduce((sum, review) => {
+                return sum + review.checkin;
+              }, 0) / res.data.length,
+            avgValue:
+              res.data.reduce((sum, review) => {
+                return sum + review.value;
+              }, 0) / res.data.length
+          },
+          () => {
+            this.setState({
+              overallRating:
+                (this.state.avgAccuracy +
+                  this.state.avgCommunication +
+                  this.state.avgCleanliness +
+                  this.state.avgLocation +
+                  this.state.avgCheckIn +
+                  this.state.avgValue) /
+                6
+            });
+          }
+        );
       })
       .catch(err => {
         console.error(
@@ -1067,7 +1073,7 @@ class ReviewsModule extends React.Component {
   handleBackToReviews() {
     this.setState({
       showBackToReviewsButton: false
-    })
+    });
   }
 
   render() {
@@ -1075,7 +1081,7 @@ class ReviewsModule extends React.Component {
       <div id="reviews">
         <div>
           <section>
-            {/* <Search handleStarRating={this.handleStarRating}/> */}
+            <Search {...this.state} handleStarRating={this.handleStarRating} />
             <div>
               <Ratings
                 {...this.state}
