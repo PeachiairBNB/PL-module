@@ -60,7 +60,7 @@ const Ratings = props => (
             </div>
           </div>
         </div>
-        <div className="_en5l15m">
+        <div className="_ej5l15s">
           <div className="_1530dt5">
             <div style={{ marginBottom: 12 }}>
               <div className="_2h22gn">

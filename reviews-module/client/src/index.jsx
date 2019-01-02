@@ -508,12 +508,18 @@ class ReviewsModule extends React.Component {
       currentPage: this.state.currentPage - 1,
       reviews: this.state.reviewsInPage[this.state.currentPage - 1]
     });
+    document.querySelector('.scroll-here').scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 
   handleNextArrow() {
     this.setState({
       currentPage: this.state.currentPage + 1,
       reviews: this.state.reviewsInPage[this.state.currentPage + 1]
+    });
+    document.querySelector('.scroll-here').scrollIntoView({
+      behavior: 'smooth',
     });
   }
 
@@ -522,12 +528,15 @@ class ReviewsModule extends React.Component {
       currentPage: Number(e.target.textContent),
       reviews: this.state.reviewsInPage[Number(e.target.textContent)]
     });
+    document.querySelector('.scroll-here').scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 
   render() {
     return (
       <div id="reviews">
-        <div>
+        <div className='scroll-here'>
           <section>
             <Search
               {...this.state}
