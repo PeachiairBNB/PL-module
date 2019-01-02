@@ -109,7 +109,7 @@ const ReviewList = props => (
 
 export default ReviewList;
 
-// {/* ... */}
+// {/*elipsis ... */}
 // <li className="_1am0dt">
 // <div className="_1oq38vn">
 //   <div className="_1r804a6o">...</div>

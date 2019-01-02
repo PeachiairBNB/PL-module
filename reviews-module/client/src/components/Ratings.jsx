@@ -3,19 +3,24 @@ import React from "react";
 const Ratings = props => (
   <div className="_2h22gn">
     {props.showBackToReviewsButton ? (
-      <div className="back-to-reviews">
-        <div className="search-count">
-          {props.reviews.length} guests have mentioned{" "}
-          <b>"{props.searchInput}"</b>
+      <div>
+        <div className="back-to-reviews">
+          <div className="search-count">
+            {props.reviews.length} guests have mentioned{" "}
+            <b>"{props.searchInput}"</b>
+          </div>
+          <div>
+            <button
+              className="back-to-reviews-button"
+              type="button"
+              onClick={props.handleBackToReviews}
+            >
+              Back to all reviews
+            </button>
+          </div>
         </div>
-        <div>
-          <button
-            className="back-to-reviews-button"
-            type="button"
-            onClick={props.handleBackToReviews}
-          >
-            Back to all reviews
-          </button>
+        <div style={{ marginTop: 16, marginBottom: 16 }}>
+          <div className="_7qp4lh" />
         </div>
       </div>
     ) : (
