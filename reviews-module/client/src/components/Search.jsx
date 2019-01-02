@@ -11,12 +11,12 @@ const Search = props => (
                 <div className="_vy3ibx">
                   <h2 className="_fecoyn4" tabIndex="-1">
                     <span className="_1dl27thl">
-                      {props.reviews.length} Reviews
+                      {props.allReviews.length} Reviews
                     </span>
                   </h2>
                   <div className="_l0ao8q">
                     {/* overall rating in stars // need to dynamically change content to total reviewcount*/}
-                    <div itemProp="ratingValue" content={props.reviews.length}>
+                    <div itemProp="ratingValue" content={props.allReviews.length}>
                       <span role="img">
                         {props.handleStarRating(props.overallRating)}
                       </span>
@@ -25,7 +25,7 @@ const Search = props => (
                     <div
                       className="_1m8bb6v"
                       itemProp="reviewCount"
-                      content={props.reviews.length}
+                      content={props.allReviews.length}
                     />
                   </div>
                 </div>

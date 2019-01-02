@@ -1,5 +1,6 @@
 import React from "react";
 import Review from './Review.jsx';
+import PageNumber from './PageNumber.jsx';
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -7,19 +8,25 @@ class ReviewList extends React.Component {
     this.state = {
       reviews: [],
       reviewCount: 0,
-      currentPage: 1
+      currentPage: 1,
+      reviewsPerPage: 7,
+      numPages: 0,
+      reviewsInPage: {}
     };
   }
-//   componentDidMount() {
-//     this.setState({
-//       reviews: this.props.reviews,
-//       reviewCount: this.props.reviews.length
-//     });
-//   }
+  componentDidMount() {
+    this.setState({
+      reviews: this.props.reviews,
+      reviewCount: this.props.reviews.length
+    });
+  }
 
-  // changePage(pageNum) {
+  handlePageSelect(e) {
+    this.setState({
+      currentPage: Number(e.currentTarget.textContent),
 
-  // }
+    })
+  }
 
   render() {
     return (

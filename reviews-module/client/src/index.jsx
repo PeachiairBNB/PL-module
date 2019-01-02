@@ -10,7 +10,7 @@ class ReviewsModule extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      tempReviews: [],
+      allReviews: [],
       listingId: 1,
       avgAccuracy: 0,
       avgCommunication: 0,
@@ -20,7 +20,12 @@ class ReviewsModule extends React.Component {
       avgValue: 0,
       overallRating: 0,
       showBackToReviewsButton: false,
-      searchInput: ""
+      searchInput: "",
+      reviewCount: 0,
+      currentPage: 1,
+      reviewsPerPage: 7,
+      numPages: 0,
+      reviewsInPage: {}
     };
     this.handleStarRating = this.handleStarRating.bind(this);
     this.handleBackToReviews = this.handleBackToReviews.bind(this);
@@ -36,10 +41,21 @@ class ReviewsModule extends React.Component {
     axios
       .get(`/api/items/${listingId}`)
       .then(res => {
+        var numPages = Math.ceil(res.data.length / 7);
+        var reviewsInPage = {};
+        var start = 0;
+        var end = 7;
+        for (var i = 1; i <= numPages; i++) {
+          reviewsInPage[i] = res.data.slice(start, end);
+          start += 7;
+          end += 7;
+        }
         this.setState({
-          reviews: res.data,
-          tempReviews: res.data,
-          listingId: listingId
+          reviews: reviewsInPage[1],
+          allReviews: res.data,
+          listingId: listingId,
+          numPages: numPages,
+          reviewsInPage: reviewsInPage
         });
       })
       .catch(err => {
@@ -1075,7 +1091,7 @@ class ReviewsModule extends React.Component {
 
   handleBackToReviews() {
     this.setState({
-      reviews: this.state.tempReviews,
+      reviews: this.state.allReviews,
       showBackToReviewsButton: false
     }, () => {
       console.log(this.state.showBackToReviewsButton, this.state.reviews)
@@ -1093,7 +1109,7 @@ class ReviewsModule extends React.Component {
   handleSearchEnter(e) {
     if (e.keyCode === 13) {
       this.setState({
-        reviews: this.state.tempReviews.filter(review => review.review.includes(this.state.searchInput)),
+        reviews: this.state.allReviews.filter(review => review.review.includes(this.state.searchInput)),
         showBackToReviewsButton: true
       }, () => {
         console.log(this.state.reviews)
@@ -1118,8 +1134,7 @@ class ReviewsModule extends React.Component {
                 handleStarRating={this.handleStarRating}
                 handleBackToReviews={this.handleBackToReviews}
               />
-              <ReviewList reviews={this.state.reviews} />
-              {/* Pages */}
+              <ReviewList reviews={this.state.allReviews} />
             </div>
           </section>
         </div>
