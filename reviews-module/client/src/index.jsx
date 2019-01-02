@@ -31,6 +31,8 @@ class ReviewsModule extends React.Component {
     this.handleBackToReviews = this.handleBackToReviews.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleSearchEnter = this.handleSearchEnter.bind(this);
+    this.handlePreviousArrow = this.handlePreviousArrow.bind(this);
+    this.handleNextArrow = this.handleNextArrow.bind(this);
   }
   componentDidMount() {
     this.getReviews(this.state.listingId);
@@ -1114,6 +1116,24 @@ class ReviewsModule extends React.Component {
       }, () => {
         console.log(this.state.reviews)
       });
+    }
+  }
+
+  handlePreviousArrow() {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: currentPage - 1,
+        reviews: reviewsInPage[currentPage - 1]
+      })
+    }
+  }
+
+  handleNextArrow() {
+    if (this.state.currentPage < this.state.numPages) {
+      this.setState({
+        currentPage: currentPage + 1,
+        reviews: reviewsInPage[currentPage + 1]
+      })
     }
   }
 
