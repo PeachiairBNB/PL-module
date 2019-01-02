@@ -123,9 +123,10 @@ class ReviewsModule extends React.Component {
 
   handleStarRating(avgRating) {
     var roundRating = Math.round(avgRating * 2) / 2;
-    if (roundRating === 0) {
-      return (
-        <span>
+
+    return (
+      <span>
+        {roundRating < 0.5 ? (
           <span className="_103pkch3">
             <svg
               viewBox="0 0 1000 1000"
@@ -141,71 +142,7 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 0.5) {
-      return (
-        <span>
+        ) : roundRating === 0.5 ? (
           <span className="_z88ebjv">
             <span className="_15qz71s">
               <svg
@@ -238,71 +175,7 @@ class ReviewsModule extends React.Component {
               </svg>
             </span>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 1.0) {
-      return (
-        <span>
+        ) : roundRating > 0.5 ? (
           <span className="_1cb248s8">
             <svg
               viewBox="0 0 1000 1000"
@@ -318,6 +191,9 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
+        ) : null}
+
+        {roundRating < 1.5 ? (
           <span className="_103pkch3">
             <svg
               viewBox="0 0 1000 1000"
@@ -333,71 +209,7 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 1.5) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
+        ) : roundRating === 1.5 ? (
           <span className="_z88ebjv">
             <span className="_15qz71s">
               <svg
@@ -430,56 +242,7 @@ class ReviewsModule extends React.Component {
               </svg>
             </span>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 2.0) {
-      return (
-        <span>
+        ) : roundRating > 1.5 ? (
           <span className="_1cb248s8">
             <svg
               viewBox="0 0 1000 1000"
@@ -495,21 +258,9 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
+        ) : null}
+
+        {roundRating < 2.5 ? (
           <span className="_103pkch3">
             <svg
               viewBox="0 0 1000 1000"
@@ -525,71 +276,7 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 2.5) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
+        ) : roundRating === 2.5 ? (
           <span className="_z88ebjv">
             <span className="_15qz71s">
               <svg
@@ -622,6 +309,25 @@ class ReviewsModule extends React.Component {
               </svg>
             </span>
           </span>
+        ) : roundRating > 2.5 ? (
+          <span className="_1cb248s8">
+            <svg
+              viewBox="0 0 1000 1000"
+              aria-hidden="true"
+              focusable="false"
+              style={{
+                height: "1em",
+                width: "1em",
+                display: "block",
+                fill: "currentColor"
+              }}
+            >
+              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
+            </svg>
+          </span>
+        ) : null}
+
+        {roundRating < 3.5 ? (
           <span className="_103pkch3">
             <svg
               viewBox="0 0 1000 1000"
@@ -637,151 +343,7 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 3.0) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 3.5) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
+        ) : roundRating === 3.5 ? (
           <span className="_z88ebjv">
             <span className="_15qz71s">
               <svg
@@ -814,6 +376,25 @@ class ReviewsModule extends React.Component {
               </svg>
             </span>
           </span>
+        ) : roundRating > 3.5 ? (
+          <span className="_1cb248s8">
+            <svg
+              viewBox="0 0 1000 1000"
+              aria-hidden="true"
+              focusable="false"
+              style={{
+                height: "1em",
+                width: "1em",
+                display: "block",
+                fill: "currentColor"
+              }}
+            >
+              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
+            </svg>
+          </span>
+        ) : null}
+
+        {roundRating < 4.5 ? (
           <span className="_103pkch3">
             <svg
               viewBox="0 0 1000 1000"
@@ -829,151 +410,7 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-        </span>
-      );
-    } else if (roundRating === 4.0) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_103pkch3">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    } else if (roundRating === 4.5) {
-      return (
-        <span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
+        ) : roundRating === 4.5 ? (
           <span className="_z88ebjv">
             <span className="_15qz71s">
               <svg
@@ -1006,11 +443,7 @@ class ReviewsModule extends React.Component {
               </svg>
             </span>
           </span>
-        </span>
-      );
-    } else if (roundRating === 5.0) {
-      return (
-        <span>
+        ) : roundRating > 4.5 ? (
           <span className="_1cb248s8">
             <svg
               viewBox="0 0 1000 1000"
@@ -1026,69 +459,9 @@ class ReviewsModule extends React.Component {
               <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
             </svg>
           </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-          <span className="_1cb248s8">
-            <svg
-              viewBox="0 0 1000 1000"
-              aria-hidden="true"
-              focusable="false"
-              style={{
-                height: "1em",
-                width: "1em",
-                display: "block",
-                fill: "currentColor"
-              }}
-            >
-              <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
-            </svg>
-          </span>
-        </span>
-      );
-    }
+        ) : null}
+      </span>
+    );
   }
 
   handleBackToReviews() {
