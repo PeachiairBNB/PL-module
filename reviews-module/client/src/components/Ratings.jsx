@@ -2,7 +2,7 @@ import React from "react";
 
 const Ratings = props => (
   <div className="_2h22gn">
-    {props.handleBackToReviews ? (
+    {props.showBackToReviewsButton ? (
       <div className="back-to-reviews">
         <div className="search-count">
           {props.reviews.length} guests have mentioned <b>"{props.searchInput}"</b>
