@@ -1152,7 +1152,7 @@ class ReviewsModule extends React.Component {
     this.setState({
       currentPage: Number(e.target.textContent),
       reviews: this.state.reviewsInPage[Number(e.target.textContent)]
-    })
+    });
   }
 
   render() {
