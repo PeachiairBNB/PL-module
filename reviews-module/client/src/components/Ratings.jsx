@@ -20,10 +20,10 @@ const Ratings = props => (
       </div>
     ) : (
       <div>
-        <div className="_en5l15m">
-          <div>
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+        <table className="_en5l15m">
+          <tbody>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Accuracy</span>
                 </div>
@@ -32,10 +32,10 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgAccuracy)}
                   </div>
                 </div>
-              </div>
-            </div>
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+              </th>
+            </tr>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Communication</span>
                 </div>
@@ -44,10 +44,10 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgCommunication)}
                   </div>
                 </div>
-              </div>
-            </div>
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+              </th>
+            </tr>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Cleanliness</span>
                 </div>
@@ -56,14 +56,14 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgCleanliness)}
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="_ej5l15s">
-          <div className="_1530dt5">
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <table className="_ej5l15s">
+          <tbody>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Location</span>
                 </div>
@@ -72,10 +72,10 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgLocation)}
                   </div>
                 </div>
-              </div>
-            </div>
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+              </th>
+            </tr>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Check-in</span>
                 </div>
@@ -84,10 +84,10 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgCheckIn)}
                   </div>
                 </div>
-              </div>
-            </div>
-            <div style={{ marginBottom: 12 }}>
-              <div className="_2h22gn">
+              </th>
+            </tr>
+            <tr style={{ marginBottom: 12 }}>
+              <th className="_2h22gn">
                 <div className="_iq8x9is">
                   <span className="_1r804a6o">Value</span>
                 </div>
@@ -96,10 +96,10 @@ const Ratings = props => (
                     {props.handleStarRating(props.avgValue)}
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
       </div>
     )}
   </div>

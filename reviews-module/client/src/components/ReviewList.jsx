@@ -53,13 +53,13 @@ const ReviewList = props => (
 
                     {Object.keys(props.reviewsInPage).map((pageNum, index) => {
                       return (
-                        <li className="_8wtxgiq" key={pageNum}>
+                        <li className="_1am0dt" key={pageNum}>
                           <button
-                            className="_1wtrbgoo"
+                            className="_1ip5u88"
                             type="button"
                             onClick={props.handlePageClick}
                           >
-                            <div className="_e602arm">{pageNum}</div>
+                            <div className="_1bdke5s">{pageNum}</div>
                           </button>
                         </li>
                       );
