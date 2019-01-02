@@ -19,10 +19,12 @@ class ReviewsModule extends React.Component {
       avgValue: 0,
       overallRating: 0,
       showBackToReviewsButton: false,
-      searchValue: ""
+      searchInput: ""
     };
     this.handleStarRating = this.handleStarRating.bind(this);
     this.handleBackToReviews = this.handleBackToReviews.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.handleSearchEnter = this.handleSearchEnter.bind(this);
   }
   componentDidMount() {
     // render reviews for current listing
@@ -1076,12 +1078,33 @@ class ReviewsModule extends React.Component {
     });
   }
 
+  handleSearchInput(e) {
+    this.setState({
+      searchInput: e.target.value
+    });
+  }
+
+  handleSearchEnter(e) {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+      this.setState({
+        reviews: reviews.filter(review => review.review.includes(searchInput)),
+        showBackToReviewsButton: true
+      });
+    }
+  }
+
   render() {
     return (
       <div id="reviews">
         <div>
           <section>
-            <Search {...this.state} handleStarRating={this.handleStarRating} />
+            <Search
+              {...this.state}
+              handleStarRating={this.handleStarRating}
+              handleSearchInput={this.handleSearchInput}
+              handleSearchEnter={this.handleSearchEnter}
+            />
             <div>
               <Ratings
                 {...this.state}
