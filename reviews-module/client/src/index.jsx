@@ -23,7 +23,6 @@ class ReviewsModule extends React.Component {
       searchInput: "",
       reviewCount: 0,
       currentPage: 1,
-      reviewsPerPage: 7,
       numPages: 0,
       reviewsInPage: {}
     };
@@ -33,6 +32,7 @@ class ReviewsModule extends React.Component {
     this.handleSearchEnter = this.handleSearchEnter.bind(this);
     this.handlePreviousArrow = this.handlePreviousArrow.bind(this);
     this.handleNextArrow = this.handleNextArrow.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
   componentDidMount() {
     this.getReviews(this.state.listingId);
@@ -44,20 +44,20 @@ class ReviewsModule extends React.Component {
       .get(`/api/items/${listingId}`)
       .then(res => {
         var numPages = Math.ceil(res.data.length / 7);
-        var reviewsInPage = {};
+        var reviewsForPage = {};
         var start = 0;
         var end = 7;
         for (var i = 1; i <= numPages; i++) {
-          reviewsInPage[i] = res.data.slice(start, end);
+          reviewsForPage[i] = res.data.slice(start, end);
           start += 7;
           end += 7;
         }
         this.setState({
-          reviews: reviewsInPage[1],
+          reviews: reviewsForPage[1],
           allReviews: res.data,
           listingId: listingId,
           numPages: numPages,
-          reviewsInPage: reviewsInPage
+          reviewsInPage: reviewsForPage
         });
       })
       .catch(err => {
@@ -1092,49 +1092,67 @@ class ReviewsModule extends React.Component {
   }
 
   handleBackToReviews() {
-    this.setState({
-      reviews: this.state.allReviews,
-      showBackToReviewsButton: false
-    }, () => {
-      console.log(this.state.showBackToReviewsButton, this.state.reviews)
-    });
+    this.setState(
+      {
+        reviews: this.state.allReviews,
+        showBackToReviewsButton: false
+      },
+      () => {
+        console.log(this.state.showBackToReviewsButton, this.state.reviews);
+      }
+    );
   }
 
   handleSearchInput(e) {
-    this.setState({
-      searchInput: e.target.value
-    }, () => {
-      console.log(this.state.searchInput)
-    });
+    this.setState(
+      {
+        searchInput: e.target.value
+      },
+      () => {
+        console.log(this.state.searchInput);
+      }
+    );
   }
 
   handleSearchEnter(e) {
     if (e.keyCode === 13) {
-      this.setState({
-        reviews: this.state.allReviews.filter(review => review.review.includes(this.state.searchInput)),
-        showBackToReviewsButton: true
-      }, () => {
-        console.log(this.state.reviews)
-      });
+      this.setState(
+        {
+          reviews: this.state.allReviews.filter(review =>
+            review.review.includes(this.state.searchInput)
+          ),
+          showBackToReviewsButton: true
+        },
+        () => {
+          console.log(this.state.reviews);
+        }
+      );
     }
   }
 
   handlePreviousArrow() {
     if (this.state.currentPage > 1) {
       this.setState({
-        currentPage: currentPage - 1,
-        reviews: reviewsInPage[currentPage - 1]
-      })
+        currentPage: this.state.currentPage - 1,
+        reviews: this.state.reviewsInPage[currentPage - 1]
+      });
     }
   }
 
   handleNextArrow() {
     if (this.state.currentPage < this.state.numPages) {
       this.setState({
-        currentPage: currentPage + 1,
-        reviews: reviewsInPage[currentPage + 1]
-      })
+        currentPage: this.state.currentPage + 1,
+        reviews: this.state.reviewsInPage[currentPage + 1]
+      });
     }
+  }
+
+  handlePageClick(e) {
+    this.setState({
+      currentPage: Number(e.target.textContent),
+      reviews: this.state.reviewsInPage[Number(e.target.textContent)]
+    })
   }
 
   render() {
@@ -1154,7 +1172,12 @@ class ReviewsModule extends React.Component {
                 handleStarRating={this.handleStarRating}
                 handleBackToReviews={this.handleBackToReviews}
               />
-              <ReviewList reviews={this.state.allReviews} />
+              <ReviewList
+                {...this.state}
+                handlePreviousArrow={this.handlePreviousArrow}
+                handleNextArrow={this.handleNextArrow}
+                handlePageClick={this.handlePageClick}
+              />
             </div>
           </section>
         </div>
