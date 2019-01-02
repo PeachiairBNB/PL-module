@@ -72,10 +72,10 @@ const Search = props => (
                     <div className="_178faes">
                       <input
                         className="_qa9xwau"
-                        id="p3-ReviewsSearchBox"
-                        name="p3-ReviewsSearchBox"
                         type="text"
                         placeholder="Search reviews"
+                        onChange={props.handleSearchInput}
+                        onKeyDown={props.handleSearchEnter}
                       />
                     </div>
                   </div>

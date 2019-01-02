@@ -10,6 +10,7 @@ class ReviewsModule extends React.Component {
     super(props);
     this.state = {
       reviews: [],
+      tempReviews: [],
       listingId: 1,
       avgAccuracy: 0,
       avgCommunication: 0,
@@ -27,7 +28,6 @@ class ReviewsModule extends React.Component {
     this.handleSearchEnter = this.handleSearchEnter.bind(this);
   }
   componentDidMount() {
-    // render reviews for current listing
     this.getReviews(this.state.listingId);
     this.getRatings(this.state.listingId);
   }
@@ -38,6 +38,7 @@ class ReviewsModule extends React.Component {
       .then(res => {
         this.setState({
           reviews: res.data,
+          tempReviews: res.data,
           listingId: listingId
         });
       })
@@ -1074,22 +1075,28 @@ class ReviewsModule extends React.Component {
 
   handleBackToReviews() {
     this.setState({
+      reviews: this.state.tempReviews,
       showBackToReviewsButton: false
+    }, () => {
+      console.log(this.state.showBackToReviewsButton, this.state.reviews)
     });
   }
 
   handleSearchInput(e) {
     this.setState({
       searchInput: e.target.value
+    }, () => {
+      console.log(this.state.searchInput)
     });
   }
 
   handleSearchEnter(e) {
-    e.preventDefault();
     if (e.keyCode === 13) {
       this.setState({
-        reviews: reviews.filter(review => review.review.includes(searchInput)),
+        reviews: this.state.tempReviews.filter(review => review.review.includes(this.state.searchInput)),
         showBackToReviewsButton: true
+      }, () => {
+        console.log(this.state.reviews)
       });
     }
   }

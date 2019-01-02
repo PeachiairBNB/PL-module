@@ -5,7 +5,7 @@ const Ratings = props => (
     {props.handleBackToReviews ? (
       <div className="back-to-reviews">
         <div className="search-count">
-          {props.reviews.length} guests have mentioned <b>"{props.searchValue}"</b>
+          {props.reviews.length} guests have mentioned <b>"{props.searchInput}"</b>
         </div>
         <div>
           <button
