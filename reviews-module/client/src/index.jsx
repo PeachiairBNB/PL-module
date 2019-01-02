@@ -1131,21 +1131,17 @@ class ReviewsModule extends React.Component {
   }
 
   handlePreviousArrow() {
-    if (this.state.currentPage > 1) {
-      this.setState({
-        currentPage: this.state.currentPage - 1,
-        reviews: this.state.reviewsInPage[currentPage - 1]
-      });
-    }
+    this.setState({
+      currentPage: this.state.currentPage - 1,
+      reviews: this.state.reviewsInPage[this.state.currentPage - 1]
+    });
   }
 
   handleNextArrow() {
-    if (this.state.currentPage < this.state.numPages) {
-      this.setState({
-        currentPage: this.state.currentPage + 1,
-        reviews: this.state.reviewsInPage[currentPage + 1]
-      });
-    }
+    this.setState({
+      currentPage: this.state.currentPage + 1,
+      reviews: this.state.reviewsInPage[this.state.currentPage + 1]
+    });
   }
 
   handlePageClick(e) {
