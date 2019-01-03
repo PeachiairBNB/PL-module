@@ -35,8 +35,11 @@ class ReviewsModule extends React.Component {
     this.handlePageClick = this.handlePageClick.bind(this);
   }
   componentDidMount() {
-    this.getReviews(this.state.listingId);
-    this.getRatings(this.state.listingId);
+    // console.log(document.URL.substr(-3));
+    // console.log(window.location.pathname.substr(1).split('/')[0])
+    var listingId = window.location.pathname.substr(1).split('/')[0];
+    this.getReviews(listingId);
+    this.getRatings(listingId);
   }
 
   getReviews(listingId) {
