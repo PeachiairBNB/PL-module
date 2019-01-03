@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 //create reviews in mongodb
 mongoose.connect(
-  "mongodb://localhost/reviews",
+  "mongodb://paul:yoon9319@ds147684.mlab.com:47684/fec-reviewsmockdata" ||
+    "mongodb://localhost/reviews",
   { useNewUrlParser: true }
 );
 const db = mongoose.connection;
