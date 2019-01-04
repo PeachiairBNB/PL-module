@@ -567,4 +567,6 @@ class ReviewsModule extends React.Component {
   }
 }
 
-ReactDOM.render(<ReviewsModule />, document.getElementById("app"));
+// ReactDOM.render(<ReviewsModule />, document.getElementById("app"));
+
+window.ReviewsModule = ReviewsModule;
