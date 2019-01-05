@@ -2,7 +2,6 @@ const getListingIdReviews = require('../database/index.js').getListingIdReviews;
 
 let retrieve = (req, res) => {
     let listingId = req.params.listingId;
-    console.log('this is listingID', listingId)
     getListingIdReviews(listingId)
     .then((data) => {
         res.send(data);

@@ -35,9 +35,7 @@ class ReviewsModule extends React.Component {
     this.handlePageClick = this.handlePageClick.bind(this);
   }
   componentDidMount() {
-    // console.log(document.URL.substr(-3));
-    // console.log(window.location.pathname.substr(1).split('/')[0])
-    var listingId = window.location.pathname.substr(1).split('/')[0];
+    var listingId = window.location.pathname.substr(1).split("/")[0];
     this.getReviews(listingId);
     this.getRatings(listingId);
   }
@@ -468,41 +466,26 @@ class ReviewsModule extends React.Component {
   }
 
   handleBackToReviews() {
-    this.setState(
-      {
-        reviews: this.state.allReviews,
-        showBackToReviewsButton: false
-      },
-      () => {
-        console.log(this.state.showBackToReviewsButton, this.state.reviews);
-      }
-    );
+    this.setState({
+      reviews: this.state.allReviews,
+      showBackToReviewsButton: false
+    });
   }
 
   handleSearchInput(e) {
-    this.setState(
-      {
-        searchInput: e.target.value
-      },
-      () => {
-        console.log(this.state.searchInput);
-      }
-    );
+    this.setState({
+      searchInput: e.target.value
+    });
   }
 
   handleSearchEnter(e) {
     if (e.keyCode === 13) {
-      this.setState(
-        {
-          reviews: this.state.allReviews.filter(review =>
-            review.review.includes(this.state.searchInput)
-          ),
-          showBackToReviewsButton: true
-        },
-        () => {
-          console.log(this.state.reviews);
-        }
-      );
+      this.setState({
+        reviews: this.state.allReviews.filter(review =>
+          review.review.includes(this.state.searchInput)
+        ),
+        showBackToReviewsButton: true
+      });
     }
   }
 

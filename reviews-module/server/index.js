@@ -5,7 +5,6 @@ const db = require('../database/index.js').db;
 const reviewsRoutes = require('./router.js');
 const path = require('path');
 var compression = require('compression');
-// var cors = require('cors');
 
 const port = process.env.PORT || 3005;
 
@@ -14,12 +13,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(compression());
-// app.use(cors());
 
-// app.use(express.static(__dirname + '/../client/dist'));
 app.use("/:id", express.static(path.join(__dirname, "../client/dist")));
-// console.log('hello', path.join(__dirname, "../client/dist"))
-//get all the reviews for a specific listing id
+
 app.use('/', reviewsRoutes);
 
 app.listen(port, () => {
