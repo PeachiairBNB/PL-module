@@ -17,7 +17,10 @@
 
 ## Usage
 
-> Some usage instructions
+1. npm install dependencies
+2. 'npm start' to start the server via nodemon and webpack
+3. http://localhost:3005/1 to visit first listing
+4. Change endpoint from 1 to 100 to render different listings
 
 ## Requirements
 
