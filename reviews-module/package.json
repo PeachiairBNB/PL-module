@@ -5,7 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack -p",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/index.js",
     "start": "concurrently \"node ./server/index.js\" \"webpack -d --watch\""
